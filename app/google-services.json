@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "717414514308",
+    "firebase_url": "https://islamicapp-12651-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "islamicapp-12651",
+    "storage_bucket": "islamicapp-12651.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717414514308:android:7a153a054237e42ac38cd1",
+        "android_client_info": {
+          "package_name": "com.example.theislamicapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "717414514308-ea87mt55pkvhti5hgcql86lb8u7pv1b7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEZiJjFMqY09KJMYZP5d-5cZbohCFfgOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "717414514308-ea87mt55pkvhti5hgcql86lb8u7pv1b7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,375 @@
+package com.example.theislamicapp;
+
+import android.util.Log;
+
+import java.util.ArrayList;
+
+public class UrlsUrduOnly {
+    public String urlsquraurduhid = "hCGVXMFVHCA\n" +
+            "De8PxXD2nCQ\n" +
+            "_oensiPyRKA\n" +
+            "M5rEF6wPMto\n" +
+            "tUbgbzlVLYk\n" +
+            "sOdZdWr6SQo\n" +
+            "SYn1iSmg-b4\n" +
+            "sTJ1eQuClnU\n" +
+            "2k2LKr6mkMw\n" +
+            "ymtYSnewsNI\n" +
+            "0RVSHV2dEOA\n" +
+            "6TcAjpurDi8\n" +
+            "NK93dirEvzg\n" +
+            "k7opUSjCSAM\n" +
+            "9KRkZQFFVW4\n" +
+            "JKFegOvHhqQ\n" +
+            "_Z130mLGckI\n" +
+            "Qpg3utW7luI\n" +
+            "dLQpw2xme70\n" +
+            "hFzmcwXtdw0\n" +
+            "pul4zDEHDUA\n" +
+            "zVE4MEhrngQ\n" +
+            "7QZjQuGjoKc\n" +
+            "_weHW-9qX9Q\n" +
+            "S_7vTujrAt4\n" +
+            "modTxE8MesQ\n" +
+            "17rfPp75sGE\n" +
+            "U7r7z4GP1ts\n" +
+            "SeA9C8_Xo6I\n" +
+            "LfdAXC2dh9Y\n" +
+            "wT-6D9ZzPb4\n" +
+            "x-AmDnnxy7E\n" +
+            "PgTI5IcgQGg\n" +
+            "gNPo3Gr2c-A\n" +
+            "bATpN-tBxMI\n" +
+            "vBG4_S9cIvU\n" +
+            "pXC21jNRXpE\n" +
+            "dF5D_NZ-7jo\n" +
+            "jJxGztc-hDU\n" +
+            "n4nFaCa7G7w\n" +
+            "jHTAnb94Hjw\n" +
+            "VU-9g1Ho2Fw\n" +
+            "il3DiJyP79s\n" +
+            "qhUF8yisOYk\n" +
+            "qIcs2Zk4SDg\n" +
+            "F_d7oCe00Bs\n" +
+            "qrj9Ktqh348\n" +
+            "Fvlr_JgMFPo\n" +
+            "Xc27u4ITGI8\n" +
+            "zDVYP3EbLp0\n" +
+            "Lo_TCZH60ac\n" +
+            "Um-47-q10K0\n" +
+            "UjQUUm-aB-I\n" +
+            "jMCBmZmG4pI\n" +
+            "ApC0ktu22dY\n" +
+            "Uyy4X7fb2OI\n" +
+            "XGfhaOr6-2s\n" +
+            "OBcmKfFZRzU\n" +
+            "s1XSVJsvaP8\n" +
+            "i7XlDfvbW2A\n" +
+            "5G2qntKXrsU\n" +
+            "QQuKNGjL-zg\n" +
+            "VsTI_8jo-J8\n" +
+            "Rd9RIDqDa28\n" +
+            "aFQyaCn2Y_0\n" +
+            "Gor4AHCnMi0\n" +
+            "YZfpW6JTM-E\n" +
+            "hlS3ftzD6eY\n" +
+            "N_7z-uNfZYE\n" +
+            "tavcrENtDUc\n" +
+            "cLNytPKcbLI\n" +
+            "pmP6Q3StpV0\n" +
+            "VA7gjajuSxk\n" +
+            "KGk11DFxnr0\n" +
+            "QOTn689-stU\n" +
+            "dF4Otr73zO8\n" +
+            "xOUxV5UqMEY\n" +
+            "J1Xzz9NOhdM\n" +
+            "PSeo5z7AUlM\n" +
+            "xNceGeizbV0\n" +
+            "bZswxVG4qPs\n" +
+            "2tSgxJ8R1Fg\n" +
+            "E2zj9OH0tgk\n" +
+            "bQN3rnA9GXk\n" +
+            "rEOZE86z9tw\n" +
+            "AxcRQpX-yxs\n" +
+            "yaW3aNm8FO8\n" +
+            "o00gPte6eD0\n" +
+            "cY-E6UbSrx8\n" +
+            "sGmpfkcd3gI\n" +
+            "B6sdjNc3UQU\n" +
+            "AHS9ZtQLejY\n" +
+            "7Aavq7a6r_8\n" +
+            "aqR9YD74WQI\n" +
+            "vfhTXLNGL-U\n" +
+            "nDKpnkzmZdA\n" +
+            "2Zfi_ZeP0Gc\n" +
+            "A947JUipDkA\n" +
+            "2Qw6OuLlpOk\n" +
+            "cNifNrlIFog\n" +
+            "gD3BFfdS0fw\n" +
+            "QCw4pc2fsNo\n" +
+            "1_dCslsS7d8\n" +
+            "YEs9pNsi-5s\n" +
+            "2E6VCEY8qmE\n" +
+            "gk-tOHSn-rQ\n" +
+            "vheMtf4JYF0\n" +
+            "NUUCsgE5ieo\n" +
+            "6z8IFCOfxq8\n" +
+            "8eXpgH4Nmd4\n" +
+            "EZT35QaC7tQ\n" +
+            "AXZHRzHgtq8\n" +
+            "pVgtoj68R8g\n" +
+            "g5Lrf4J_z_I";
+    public String urlsurduonlyid = "UpeUmBTcNmo\n" +
+            "JXkeD6bM2d8\n" +
+            "wUaMMDvkZkM\n" +
+            "KaYzZz-Wcoo\n" +
+            "_eZRqkjUFeM\n" +
+            "7rvcrycKdYw\n" +
+            "P8_JSDgWX3w\n" +
+            "0s1yinuAzwg\n" +
+            "Y6GKquwF36g\n" +
+            "ZYujsCx0760\n" +
+            "gSEkSxTTHjI\n" +
+            "MhwdcPs19Bc\n" +
+            "bCUTzYa1sk4\n" +
+            "q3S4lkd5P9o\n" +
+            "31Kc0Xfy8WY\n" +
+            "iLN33q8Na8c\n" +
+            "WWkbHTDzhmQ\n" +
+            "uOcCOqsb4RQ\n" +
+            "cELaq9bj8oI\n" +
+            "vBhI-3hl7Ok\n" +
+            "mfcVlFgrDaE\n" +
+            "S8GQJWLrYLM\n" +
+            "K-JXwUMj7oo\n" +
+            "g0ReS6SDKQA\n" +
+            "4LixKVQjSYE\n" +
+            "cTZiz7MX0cI\n" +
+            "SDeC_1GmQ1w\n" +
+            "F2j5Xd0eKTE\n" +
+            "E_n8_fk4JuI\n" +
+            "qsFMlsrCkvI\n" +
+            "C4V5mb8IoXQ\n" +
+            "2qjBU634fP8\n" +
+            "8XklhHykQ_o\n" +
+            "YtlkNAKgKRI\n" +
+            "esuVVbB1vB8\n" +
+            "eF30NIB-QeU\n" +
+            "_jHiFTvhVQg\n" +
+            "Z4RdH_OsCPs\n" +
+            "OtgrlOTNHB4\n" +
+            "nhr1Qp3eSWY\n" +
+            "3f-V-80GwGU\n" +
+            "4Yt5st0jkKs\n" +
+            "uHUCufeHe9c\n" +
+            "A2LIQ0xyY9U\n" +
+            "0BWTI7wTX4Q\n" +
+            "Fj-m4pom080\n" +
+            "kwBwiEImGUU\n" +
+            "sQPLuoxgNiY\n" +
+            "GMYhP2PRNyU\n" +
+            "UrStDHuPfaM\n" +
+            "pSxCiY_oTM4\n" +
+            "PXxhmvQYv_Y\n" +
+            "uWXF-tGh57Y\n" +
+            "SEkKWkqE_uk\n" +
+            "MyzUGqmyqyc\n" +
+            "fNsVC9_rL2g\n" +
+            "HJuQM0JHO3c\n" +
+            "DjGj79aLDdc\n" +
+            "-WzrkPX5VwY\n" +
+            "SWszW9NG4Cs\n" +
+            "qtknfaOb-r0\n" +
+            "UuH9lLMWVsE\n" +
+            "rJyKc1V4c5g\n" +
+            "AGKL8a3Tzz8\n" +
+            "oKF7_Pn3M4A\n" +
+            "sKrE9hRasbk\n" +
+            "4pDuGkgVNsE\n" +
+            "oAKywSWvtpw\n" +
+            "Gko6o9byFJI\n" +
+            "rTyseJYQfxo\n" +
+            "0N5Nh487nyU\n" +
+            "Ppvs-mHar40\n" +
+            "nDx0BXIk_yc\n" +
+            "sbCTCcnq3YE\n" +
+            "JH0gDu85McM\n" +
+            "kPWotAlhJYs\n" +
+            "FV-qkEDkgF0\n" +
+            "k2uVFccNThA\n" +
+            "t8OYK4i2qpE\n" +
+            "dPyvBZ7Urbw\n" +
+            "5o2edzWlY1o\n" +
+            "RbN5O0UMfVw\n" +
+            "3V_6R2Tapd0\n" +
+            "90ML1qrZeTw\n" +
+            "JXqt179_FOg\n" +
+            "UmCRrVwOkIk\n" +
+            "IUftSP9auTM\n" +
+            "Txa73I-FEb4\n" +
+            "TgLx658Gp0M\n" +
+            "2cYWiJpL6a0\n" +
+            "U7vrTGZyzgg\n" +
+            "Nzdl7siA-Do\n" +
+            "1C4PEQNEdtU\n" +
+            "7tUH1kZIkIs\n" +
+            "uSkQnZuDR5k\n" +
+            "VQJKQfyKV0A\n" +
+            "NYCjyWUqtnk\n" +
+            "zqvWYms3sPA\n" +
+            "Uj1OdMHsTe0\n" +
+            "C8sGY_hAObo\n" +
+            "u9QojTOouUo\n" +
+            "6cwOsLjzepI\n" +
+            "zLfI0ikj_W4\n" +
+            "KK1Ko3_YYNg\n" +
+            "opK5ShIh2wo\n" +
+            "i65Cu9hhURg\n" +
+            "GUweVPDQIDY\n" +
+            "NJBADrnR2sU\n" +
+            "J6dVkWnQQtU\n" +
+            "ZA3KoriLA6o\n" +
+            "oFbg9WSmymQ\n" +
+            "RkfhpbI8U4U\n" +
+            "wvWrwpVUFTQ\n" +
+            "XNywJMrwaUQ";
+
+    public String urlsquran = "u1nqafqyqTA\n" +
+            "nibOG3vRGpU\n" +
+            "tf26W_1mdFg\n" +
+            "G0NqWjlXlQE\n" +
+            "EFgAy0OP7CM\n" +
+            "RKXrMg14DaU\n" +
+            "GxDjbom4nIg\n" +
+            "tIoCEBUmrQU\n" +
+            "4RoQ_FkdH_c\n" +
+            "YkG3XTG1pJM\n" +
+            "EIFJ43WBuVo\n" +
+            "URVroBsLsl4\n" +
+            "v7zVkvzh4S8\n" +
+            "-0A1Uy_3BqE\n" +
+            "WslQRNymzYw\n" +
+            "QHjmot_zB3M\n" +
+            "xnc9HL6o5yQ\n" +
+            "znuTS6Q96Vs\n" +
+            "JaeLTXaOmiU\n" +
+            "P99qEmtNSqo\n" +
+            "v_DfkRPS-Ak\n" +
+            "e4a3p8TgUw0\n" +
+            "l7k51vBeLD8\n" +
+            "ezWh_uABBzQ\n" +
+            "btl5ytL8_Fk\n" +
+            "SrtlaNMRRw4\n" +
+            "q8vS7jzIph4\n" +
+            "zUEzIrYc2eI\n" +
+            "mMYP6kuTSx0\n" +
+            "22bWGmjtE9Y\n" +
+            "BSvQ9LQ78Cs\n" +
+            "CiQIHvku7nU\n" +
+            "u8S2zJpprZI\n" +
+            "lTTAFbgmJe0\n" +
+            "389WDzOLksA\n" +
+            "emousr_FIHI\n" +
+            "WiRy0sl7JZ8\n" +
+            "PBFKqO56c-4\n" +
+            "1yGVVFet_BI\n" +
+            "SFLaFHI7Kww\n" +
+            "wuji4xmdOEw\n" +
+            "cmIwH5ar_7M\n" +
+            "4iGCJI4xZrg\n" +
+            "uSXcJmiSsTo\n" +
+            "2AkyfRIR5lw\n" +
+            "RkP5RDTfhEo\n" +
+            "F7gqhhxkUJ8\n" +
+            "wr8TDXjA8kw\n" +
+            "Hkf4UCVC_yU\n" +
+            "oxMD-BX3IXE\n" +
+            "6TexBrmYc70\n" +
+            "ykjOEXwxhOI\n" +
+            "H_vEYQ4wuDQ\n" +
+            "BbrtnTvKePo\n" +
+            "muhKlnac-i0\n" +
+            "aubS8TecslU\n" +
+            "bAy8IZsfhm0\n" +
+            "BM_r_xgjj_8\n" +
+            "Rdhva9_0p4o\n" +
+            "DdtiCjO2N-g\n" +
+            "shU3cHdOSkg\n" +
+            "cW7XmILB4II\n" +
+            "oagkbDU8m5I\n" +
+            "LlUYSVq4zlA\n" +
+            "xOoC0SV27_4\n" +
+            "Bo4vM6_HltM\n" +
+            "q6EWyyplP9o\n" +
+            "QCM3pcnlhPo\n" +
+            "62RIS_q4FZo\n" +
+            "l7_5T6_WQ7s\n" +
+            "GRJoa7xY1Tc\n" +
+            "Sfkyz_gGkXw\n" +
+            "b5Tq2g6ynq4\n" +
+            "E_ZaCciNn54\n" +
+            "gGW5LuQghGk\n" +
+            "TLEuyKG2buM\n" +
+            "MDHz8PpAiyA\n" +
+            "M_jrwXBOl1M\n" +
+            "XudZNuxm5zk\n" +
+            "9a5-TxG5GRs\n" +
+            "gNQd6FQLsvQ\n" +
+            "8LosxlqhaTk\n" +
+            "VFAxRV9a-w0\n" +
+            "p_in_GR-neY\n" +
+            "gwKC9W18TrA\n" +
+            "wEOZsvLyS74\n" +
+            "pHUWDzMRZW8\n" +
+            "mfuCi8alrb8\n" +
+            "eKZ38VYtHuI\n" +
+            "FsdfNGIBIYs\n" +
+            "bGqmBo9rcs4\n" +
+            "AH1mYJTLOwo\n" +
+            "cqMI5RCBivg\n" +
+            "ZMpZhlGFfME\n" +
+            "4tgptyV-CQA\n" +
+            "ElrBVCDj9mk\n" +
+            "0fNYbCjcJ9o\n" +
+            "rlXOFhcbE6M\n" +
+            "nOaLcB4KliM\n" +
+            "lIJwwgBt0xQ\n" +
+            "0VauU7RJ0J8\n" +
+            "tvFyrElP75I\n" +
+            "Jq99D7AV8VU\n" +
+            "ycDTGWBNVGs\n" +
+            "lrzYf_DEYPI\n" +
+            "2f5cwqnCT8Q\n" +
+            "T3pEGIbC2Bc\n" +
+            "FqHigXI9Ucw\n" +
+            "D1g4BLIjTes\n" +
+            "VItrsgKSj6Q\n" +
+            "Si5LoKGkxzE\n" +
+            "dtnhtsbaFG8\n" +
+            "gUtD5O5AmaQ\n" +
+            "ZIUSO7aAJPY";
+
+    String[] urlsurduonlyidarr;
+    String[] urlsquraurduhidarr;
+    String[] urlsquranarr;
+
+
+
+    public void getQuran(){
+        urlsquranarr = urlsquran.split("\\r?\\n");
+        Log.d("testsize1",String.valueOf(urlsquranarr.length));
+
+    }
+    public void getQuranurdu(){
+        urlsquraurduhidarr = urlsquraurduhid.split("\\r?\\n");
+        Log.d("testsize1",String.valueOf(urlsquraurduhidarr.length));
+
+    }
+    public void getQuranurduonly(){
+        urlsurduonlyidarr = urlsurduonlyid.split("\\r?\\n");
+        Log.d("testsize1",String.valueOf(urlsurduonlyidarr.length));
+
+
+    }
+
+}
