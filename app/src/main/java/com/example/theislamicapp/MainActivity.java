@@ -283,21 +283,19 @@ public class MainActivity extends FragmentActivity {
                 if(!view.getResources().getResourceName(view.getId()).contains("linkid")) {
 
                     String name = (((TextView) dialog.findViewById(R.id.urlname)).getText()).toString();
-
-                    YoutubeLinkManagger lm = new YoutubeLinkManagger(this,name);
-
-
-
-//                    DBmodifier db = new DBmodifier();
-//
-//                    db.addfolder(name, indexList,user);
-//                    dialog.dismiss();
-                } else {
-                    String name =  (((TextView)dialog.findViewById(R.id.urlname)).getText()).toString();
-                    String url =  (((TextView)dialog.findViewById(R.id.urlname2)).getText()).toString();
                     DBmodifier db = new DBmodifier();
+                    db.addfolder(name, indexList,user);
+                    dialog.dismiss();
+                } else {
+                    String name =  "test";
+                    String  url=  "https://www.youtube.com/playlist?list=PLzGSkwYjvpIZznqM1fdwOEx4Vw8vSb6Ov";
 
-                    db.addUrl(name, indexList,user,"YkG3XTG1pJM");
+                    YoutubeLinkManagger lm = new YoutubeLinkManagger();
+                    lm.YoutubeLinkManaggert(MainActivity.this,indexList,url,user,name);
+
+
+
+
                     dialog.dismiss();
 
                 }
