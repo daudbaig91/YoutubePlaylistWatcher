@@ -60,7 +60,7 @@ public class YoutubePlayer extends FragmentActivity {
                 YouTubePlayerUtils.loadOrCueVideo(
                         player,
                         getLifecycle(),
-                        "J_EaZeFyHzQ",
+                        keyYoutube,
                         duration
                 );
             }

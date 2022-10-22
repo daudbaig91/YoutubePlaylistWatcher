@@ -287,8 +287,8 @@ public class MainActivity extends FragmentActivity {
                     db.addfolder(name, indexList,user);
                     dialog.dismiss();
                 } else {
-                    String name =  "test";
-                    String  url=  "https://www.youtube.com/playlist?list=PLzGSkwYjvpIZznqM1fdwOEx4Vw8vSb6Ov";
+                    String name =  (((TextView)dialog.findViewById(R.id.urlname)).getText()).toString();
+                    String  url=  (((TextView)dialog.findViewById(R.id.urlname2)).getText()).toString();
 
                     YoutubeLinkManagger lm = new YoutubeLinkManagger();
                     lm.YoutubeLinkManaggert(MainActivity.this,indexList,url,user,name);
