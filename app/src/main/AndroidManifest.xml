@@ -36,7 +36,7 @@
             android:exported="true"
             android:icon="@drawable/app_icon_your_company"
             android:logo="@drawable/app_icon_your_company"
-            android:screenOrientation="landscape">
+          >
         </activity>
     </application>
 

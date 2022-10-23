@@ -2,9 +2,12 @@ package com.example.theislamicapp;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.app.UiModeManager;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -64,7 +67,12 @@ public class MainActivity extends FragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        UiModeManager uiModeManager = (UiModeManager) getSystemService(UI_MODE_SERVICE);
+        if (uiModeManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION) {
 
+        } else {
+
+        }
         Bundle extras = getIntent().getExtras();
         user = extras.getString("user");
 
@@ -92,6 +100,20 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
+        View.OnKeyListener keyListener = new View.OnKeyListener() {
+
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                log(String.valueOf(event));
+                return false;
+            }
+
+            public boolean onKeyUp(View v, int keyCode, KeyEvent event) {
+                log(String.valueOf(event));
+
+                return false;
+            }
+        };
     }
 
 
@@ -177,39 +199,11 @@ public class MainActivity extends FragmentActivity {
     }
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        log(String.valueOf(event));
         switch (keyCode) {
-            case KeyEvent.KEYCODE_DPAD_RIGHT :
-            case KeyEvent.KEYCODE_DPAD_LEFT: {
-                RelativeLayout menu = findViewById(R.id.menuid);
-                if(menu.getVisibility() == View.VISIBLE){
-                    menu.setVisibility(View.GONE);
-                }else {
-                    menu.setVisibility(View.VISIBLE);
-                }
-
-                return true;
-            }
-            case KeyEvent.KEYCODE_DPAD_DOWN: {
-                RelativeLayout rv = findViewById(R.id.adminview);
-                RelativeLayout rv2 = findViewById(R.id.menuid);
-                if(rv2.getVisibility()==View.VISIBLE){
-                    RelativeLayout bttn1 = findViewById(R.id.addfolder);
-                    ImageView bttn2 = findViewById(R.id.linkid);
-                   if(bttn1.getBackground().equals(Color.parseColor("#FFFFFF"))){
-                       bttn2.setBackgroundColor(Color.parseColor("#FFFFFF"));
-                       bttn1.setBackgroundColor(0);
-                   }else {
-                       bttn1.setBackgroundColor(Color.parseColor("#FFFFFF"));
-                       bttn2.setBackgroundColor(0);
-                   }
-                }if(rv.getVisibility()==View.VISIBLE){
-
-                }
 
 
-            }
             case KeyEvent.KEYCODE_BACK: {
                 if(indexList.size()==0) {
                     finishAffinity();
@@ -237,14 +231,84 @@ public class MainActivity extends FragmentActivity {
                             e.printStackTrace();
                         }
                     }
+                    return true;
+                }
+            }
+            case KeyEvent.KEYCODE_DPAD_DOWN:
+            case KeyEvent.KEYCODE_DPAD_UP:
+                log(String.valueOf("up"));
+                RelativeLayout rv = findViewById(R.id.menuid);
+                RelativeLayout rv2 = findViewById(R.id.adminview);
 
+                if(rv.getVisibility()==View.VISIBLE){
+                    TextView logout = findViewById(R.id.textView);
+                    TextView admin = findViewById(R.id.textView3);
+
+                    if(logout.getCurrentTextColor()== Color.parseColor("#FF5722")){
+                        admin.setTextColor(Color.parseColor("#FF5722"));
+                        logout.setTextColor(Color.parseColor("#FFCDC7C7"));
+                    }else{
+                        logout.setTextColor(Color.parseColor("#FF5722"));
+                        admin.setTextColor(Color.parseColor("#FFCDC7C7"));
+                    }
+                }
+                else if(rv2.getVisibility() == View.VISIBLE){
+                    RelativeLayout fodler = findViewById(R.id.addfolder);
+                    ImageView link = findViewById(R.id.linkid);
+                    Drawable dw  = fodler.getBackground();
+                    if( fodler.getBackground().getConstantState().equals(getResources().getDrawable(R.color.backgroundorange).getConstantState()) ){
+                        link.setBackground(getResources().getDrawable(R.color.backgroundorange));
+                        fodler.setBackground(getResources().getDrawable(R.drawable.circle));
+                    }else{
+                        fodler.setBackground(getResources().getDrawable(R.color.backgroundorange));
+                        link.setBackgroundColor(0);
+                    }
+                }
+                return true;
+            case KeyEvent.KEYCODE_DPAD_LEFT :{
+                RelativeLayout menu = findViewById(R.id.menuid);
+                RelativeLayout admin = findViewById(R.id.adminview);
+                if(menu.getVisibility() == View.VISIBLE){
+                    menu.setVisibility(View.GONE);
+                }
+                if(admin.getVisibility() == View.VISIBLE){
+                    admin.setVisibility(View.GONE);
                 }
                 return true;
             }
-        }
-        return false;
-    }
+            case KeyEvent.KEYCODE_DPAD_RIGHT: {
+                RelativeLayout menu = findViewById(R.id.menuid);
+                RelativeLayout admin2 = findViewById(R.id.adminview);
+                if(admin2.getVisibility() == View.VISIBLE){
+                    RelativeLayout fodler = findViewById(R.id.addfolder);
+                    ImageView link = findViewById(R.id.linkid);
+                    if( fodler.getBackground().getConstantState().equals(getResources().getDrawable(R.color.backgroundorange).getConstantState()) ){
+                        addFile(fodler);
+                    }else{
+                        addFile(link);
+                    }
+                }
+                if(admin2.getVisibility() != View.VISIBLE) {
+                    if (menu.getVisibility() != View.VISIBLE) {
+                        menu.setVisibility(View.VISIBLE);
+                        admin2.setVisibility(View.GONE);
+                    } else {
+                        TextView logout = findViewById(R.id.textView);
+                        TextView admin = findViewById(R.id.textView3);
+                        if (logout.getCurrentTextColor() == Color.parseColor("#FF5722")) {
+                            logout(admin);
+                        } else if (admin.getCurrentTextColor() == Color.parseColor("#FF5722")) {
+                            adminShow(menu);
+                        }
+                    }
+                }
 
+                return true;
+            }
+            default:
+                return super.onKeyUp(keyCode, event);
+        }
+    }
 
     public void adminShow(View view){
         RelativeLayout admin = findViewById(R.id.adminview);
