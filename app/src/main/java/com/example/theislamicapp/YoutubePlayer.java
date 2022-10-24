@@ -25,6 +25,7 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.Abs
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.YouTubePlayerTracker;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.YouTubePlayerUtils;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.ui.utils.FadeViewHelper;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
@@ -142,25 +143,28 @@ int i = 0;
         Log.d("string121", String.valueOf(i++));
         if (event.getKeyCode()== KeyEvent.KEYCODE_DPAD_CENTER ||event.getKeyCode()== KeyEvent.KEYCODE_DPAD_UP) {
             if (status.equals("PLAYING")) {
-                player2.pause();
+
             } else {
                 player2.play();
             }
         }
-        else if (event.getKeyCode()== KeyEvent.KEYCODE_DPAD_LEFT)
-                player2.seekTo(currentSeconds-=7);
+        else if (event.getKeyCode()== KeyEvent.KEYCODE_DPAD_LEFT) {
+            player2.seekTo(currentSeconds -= 7);
 
-        else if (event.getKeyCode()== KeyEvent.KEYCODE_DPAD_RIGHT)
-                player2.seekTo(currentSeconds+=7);
+            player2.pause();
+            player2.play();
+
+
+        }
+        else if (event.getKeyCode()== KeyEvent.KEYCODE_DPAD_RIGHT) {
+            player2.seekTo(currentSeconds += 7);
+            player2.pause();
+            player2.play();
+        }
         else if (event.getKeyCode()== KeyEvent.KEYCODE_BACK){
             finish();
         }
         return true;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public void run(View view){
-
-
-    }
 }
