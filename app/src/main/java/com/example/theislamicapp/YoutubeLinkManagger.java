@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class YoutubeLinkManagger {
 
-    String keyApi = "AIzaSyCWlEH7YQV04DFQ4L0pHgkGX-U7N91gfa0";
+    String keyApi = BuildConfig.MAPS_API_KEY;
 
     public HashMap<String, String>  YoutubeLinkManaggert(Context context, ArrayList<String> indexList,String url, String user, String name){
         HashMap<String, String>  map = new HashMap<>();

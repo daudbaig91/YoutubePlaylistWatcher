@@ -18,15 +18,27 @@ public class DBmodifier {
 
 
         UrlsUrduOnly urls = new UrlsUrduOnly();
-        urls.getQuran();
-        urls.getQuranurduonly();
-        urls.getQuranurdu();
 
+        urls.getQuranSurah();
+
+        urls.getQuranurduonlySurah();
+        urls.getQuranurduonlyParah();
+
+        urls.getQuranurdu();
+        urls.getQuranurdu2();
+
+
+        for(int i = 0; i < urls.urdutranslation.length; i++) {
+            refdb.child(str).child("*Quran in Urdu - اردو میں قرآن").child("-Parah " + String.valueOf(i+1)).setValue("-"+urls.urdutranslation[i]);
+            refdb.child(str).child("*Quran in Urdu 2 - اردو میں قرآن").child("-Parah " + String.valueOf(i+1)).setValue("-"+urls.urdutranslation2[i]);
+
+            refdb.child(str).child("*Quran Urdu Only Parah - قرآن صرف اردو سورت").child("-Parah " + String.valueOf(i+1)).setValue("-"+urls.urlsurduonlyidarrparah[i]);
+
+        }
 
         for(int i = 0; i < urls.urlsquranarr.length; i++) {
             refdb.child(str).child("*Quran - قرآن").child("-Surah " + String.valueOf(i+1)).setValue("-"+urls.urlsquranarr[i]);
-            refdb.child(str).child("*Quran in Urdu - اردو میں قرآن").child("-Surah " + String.valueOf(i+1)).setValue("-"+urls.urlsquraurduhidarr[i]);
-            refdb.child(str).child("*Quran Urdu Only - قرآن صرف اردو میں").child("-Surah " + String.valueOf(i+1)).setValue("-"+urls.urlsurduonlyidarr[i]);
+            refdb.child(str).child("*Quran Urdu Only Surah - قرآن صرف اردو سورت").child("-Surah " + String.valueOf(i+1)).setValue("-"+urls.urlsurduonlyidarr[i]);
 
         }
     }

@@ -352,7 +352,7 @@ public class MainActivity extends FragmentActivity {
                     dialog.dismiss();
                 } else {
                     String name =  (((TextView)dialog.findViewById(R.id.urlname)).getText()).toString();
-                    String  url=  (((TextView)dialog.findViewById(R.id.urlname2)).getText()).toString();
+                    String  url=  "https://www.youtube.com/playlist?list=PL600D61A9D0D21EE9";
 
                     YoutubeLinkManagger lm = new YoutubeLinkManagger();
                     lm.YoutubeLinkManaggert(MainActivity.this,indexList,url,user,name);
