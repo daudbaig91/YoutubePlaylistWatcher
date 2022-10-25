@@ -311,6 +311,8 @@ public class MainActivity extends FragmentActivity {
     }
 
     public void adminShow(View view){
+
+
         RelativeLayout admin = findViewById(R.id.adminview);
         RelativeLayout menu = findViewById(R.id.menuid);
         if (admin.getVisibility() == View.VISIBLE){
@@ -369,5 +371,24 @@ public class MainActivity extends FragmentActivity {
     }
 
 
+    public void showoptions(View view){
+
+        RelativeLayout menu = findViewById(R.id.menuid);
+        RelativeLayout admin2 = findViewById(R.id.adminview);
+
+        if (admin2.getVisibility() == View.VISIBLE) {
+            admin2.setVisibility(View.GONE);
+
+        }
+        if (menu.getVisibility() != View.VISIBLE) {
+            menu.setVisibility(View.VISIBLE);
+
+        } else {
+            menu.setVisibility(View.GONE);
+
+
+        }
+
+    }
 }
 

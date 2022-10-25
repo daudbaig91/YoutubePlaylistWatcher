@@ -20,6 +20,8 @@
         tools:ignore="MergeRootFrame" >
 
         <ListView
+            android:drawSelectorOnTop="false"
+            android:listSelector="@android:color/holo_orange_dark"
             android:id="@+id/listviewQuran"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -32,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="40dp"
         android:layout_marginBottom="20dp"
         android:animateLayoutChanges="true"
         android:background="@drawable/bendcorner"
@@ -76,7 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/menuid"
-        android:visibility="visible">
+        android:visibility="gone">
 
 
         <RelativeLayout
@@ -115,5 +117,18 @@
             android:src="@drawable/link" />
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/options"
+        android:layout_width="50dp"
+        android:layout_height="70dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="-20dp"
+        android:layout_marginBottom="20dp"
+        android:animateLayoutChanges="true"
+        android:background="@drawable/bendcorner"
+        android:onClick="showoptions"
+        android:visibility="visible" />
 
 </RelativeLayout>
