@@ -7,6 +7,7 @@
     android:layout_gravity="center"
     android:background="#353232"
     android:gravity="center"
+    android:onClick="ck"
     tools:context=".MainActivity"
     tools:ignore="MergeRootFrame">
 
@@ -17,15 +18,15 @@
         android:background="#353232"
         android:gravity="center"
         android:orientation="vertical"
-        tools:ignore="MergeRootFrame" >
+        tools:ignore="MergeRootFrame">
 
         <ListView
-            android:drawSelectorOnTop="false"
-            android:listSelector="@android:color/holo_orange_dark"
             android:id="@+id/listviewQuran"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:drawSelectorOnTop="false"
+            android:listSelector="@android:color/holo_orange_dark" />
     </LinearLayout>
 
     <RelativeLayout

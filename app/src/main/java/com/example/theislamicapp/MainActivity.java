@@ -4,11 +4,9 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.UiModeManager;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -33,27 +31,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-
-/*
- * Main Activity class that loads {@link MainFragment}.
- */
 public class MainActivity extends FragmentActivity {
 
     String user = "Error Please Log out";
@@ -61,33 +50,28 @@ public class MainActivity extends FragmentActivity {
     ArrayList<String> indexList = new ArrayList<>();
     Map<String, String> map = new TreeMap<>();
 
-
+    ArrayAdapter<String> itemAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         UiModeManager uiModeManager = (UiModeManager) getSystemService(UI_MODE_SERVICE);
-        if (uiModeManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION) {
-
-        } else {
-
-        }
+        uiModeManager.getCurrentModeType();
         Bundle extras = getIntent().getExtras();
         user = extras.getString("user");
-
-        youtubeConverter yc = new youtubeConverter();
-
-
 
         DatabaseReference database = FirebaseDatabase.getInstance().getReference()
                 .child("Users").child(user);
         database.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Object object = dataSnapshot.getValue(Object.class);
                 try {
                     reqJson = new JSONObject((new Gson().toJson(object)).trim());
+                    if (check){
+                        ck();
+                    }else
                     test(null);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -100,7 +84,7 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
-        View.OnKeyListener keyListener = new View.OnKeyListener() {
+        new View.OnKeyListener() {
 
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -116,23 +100,24 @@ public class MainActivity extends FragmentActivity {
         };
     }
 
-
+    ListView lv;
     @SuppressLint("ResourceType")
     private void test(String valueObject) throws JSONException {
         JSONObject jsonObject = reqJson;
         boolean b = true;
 
+
         ArrayList<String> arr = new ArrayList<String>();
 
         if(valueObject!= null && valueObject.length()==0){
         }else {
+            log2("doe");
             if(indexList.size()!=0){
                 try {
                     jsonObject = new JSONObject(valueObject.trim());
                 }catch (NullPointerException e){
                     b = false;
                 }
-
             }
             if (b || (valueObject!= null && !valueObject.isEmpty())) {
                 Iterator<String> keys = jsonObject.keys();
@@ -159,42 +144,48 @@ public class MainActivity extends FragmentActivity {
 
         }
 
-        ListView lv = findViewById(R.id.listviewQuran);
-        ArrayAdapter<String> itemAdapter = new ArrayAdapter<String>(this, R.layout.listviewitemquran,arr);
+        lv = findViewById(R.id.listviewQuran);
+        itemAdapter = new ArrayAdapter<String>(this, R.layout.listviewitemquran,arr);
         lv.setAdapter(itemAdapter);
         itemAdapter.notifyDataSetChanged();
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String value = map.get(((TextView)view).getText());
-                if(value.isEmpty()){
+                savedLastVaue = map.get(((TextView)view).getText());
+                if(savedLastVaue.isEmpty()){
                     try {
                         indexList.add((String) ((TextView)view).getText());
-                        test(value);
+                        test(savedLastVaue);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
-                else if(value.substring(0,1).equals("-")) {
+                else if(savedLastVaue.substring(0,1).equals("-")) {
                     //link
                     Intent intent = new Intent(MainActivity.this, YoutubePlayer.class);
-                    intent.putExtra("key", value.substring(1));
+                    intent.putExtra("key", savedLastVaue.substring(1));
                     startActivity(intent);
                 }else{
                     //folder;
+                    savedIndex =(String) ((TextView)view).getText();
                     indexList.add((String) ((TextView)view).getText());
                     try {
-                        test(value);
+                        test(savedLastVaue);
                     } catch (JSONException e) {
                         e.printStackTrace();
-                    }
+                    }//sdsadxzczc
+                    //sdaq
                 }
+                log2(indexList.toString());
             }
         });
     }
 
+    String savedLastVaue;
+    String savedIndex;
     public void log(String str){
+        if(str != null )
         Log.d("test123",str);
     }
 
@@ -232,7 +223,7 @@ public class MainActivity extends FragmentActivity {
                         }
                     }
                     return true;
-                }
+                }//jh
             }
             case KeyEvent.KEYCODE_DPAD_DOWN:
             case KeyEvent.KEYCODE_DPAD_UP:
@@ -351,26 +342,35 @@ public class MainActivity extends FragmentActivity {
                     String name = (((TextView) dialog.findViewById(R.id.urlname)).getText()).toString();
                     DBmodifier db = new DBmodifier();
                     db.addfolder(name, indexList,user);
+
                     dialog.dismiss();
+
                 } else {
-                    String name =  (((TextView)dialog.findViewById(R.id.urlname)).getText()).toString();
-                    String  url=  "https://www.youtube.com/playlist?list=PL600D61A9D0D21EE9";
+                    String url =  (((TextView)dialog.findViewById(R.id.urlname)).getText()).toString();
+                    String  name =  (((TextView)dialog.findViewById(R.id.urlname2)).getText()).toString();
+
+                    Log.d("tag",name);
 
                     YoutubeLinkManagger lm = new YoutubeLinkManagger();
-                    lm.YoutubeLinkManaggert(MainActivity.this,indexList,url,user,name);
-
-
-
+                    try {
+                        lm.YoutubeLinkManaggert(MainActivity.this,indexList,url,user,name);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
 
                     dialog.dismiss();
 
+
                 }
+                check = true;
+
             }
+
         });
         dialog.show();
     }
 
-
+    boolean check = false;
     public void showoptions(View view){
 
         RelativeLayout menu = findViewById(R.id.menuid);
@@ -386,9 +386,55 @@ public class MainActivity extends FragmentActivity {
         } else {
             menu.setVisibility(View.GONE);
 
-
         }
+    }
 
+    public void ck(){
+        ArrayList<String> arr2 = new ArrayList<String>();
+        JSONObject jsonObject = new JSONObject();;
+        try {
+             jsonObject = new JSONObject(reqJson.toString().trim());
+
+             for(String word: indexList){
+                 jsonObject = new JSONObject(jsonObject.getString("*"+word).trim());
+             }
+
+
+
+
+
+            Iterator<String> keys = jsonObject.keys();
+            while (keys.hasNext()) {
+                String key = keys.next();
+                arr2.add(key.substring(1));
+
+                String value = jsonObject.getString(key);
+                map.put(key.substring(1), value);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        Collections.sort(arr2, new Comparator<String>() {
+            public int compare(String o1, String o2) {
+                return extractInt(o1) - extractInt(o2);
+            }
+
+            int extractInt(String s) {
+                String num = s.replaceAll("\\D", "");
+                // return 0 if no digits found
+                return num.isEmpty() ? 0 : Integer.parseInt(num);
+            }
+        });
+
+        lv = findViewById(R.id.listviewQuran);
+        itemAdapter = new ArrayAdapter<String>(this, R.layout.listviewitemquran,arr2);
+        lv.setAdapter(itemAdapter);
+        itemAdapter.notifyDataSetChanged();
+
+    }
+
+    public void log2(String str){
+        Log.d("jh44",str);
     }
 }
 

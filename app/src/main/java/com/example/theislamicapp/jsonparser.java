@@ -30,7 +30,14 @@ public class jsonparser {
                 result = js.getString("nextPageToken") ;
             }
         }
-        return result;
+        return result;//s
     }
+
+    public String jsonparservideo(String str) throws JSONException {
+        JSONObject arr = new JSONObject(str);
+        return ((JSONObject)arr.getJSONArray("items").get(0)).getJSONObject("snippet")
+                .getString("title");//s
+    }
+
 
 }

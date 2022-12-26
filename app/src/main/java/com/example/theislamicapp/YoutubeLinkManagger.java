@@ -16,7 +16,7 @@ public class YoutubeLinkManagger {
 
     String keyApi = BuildConfig.MAPS_API_KEY;
 
-    public HashMap<String, String>  YoutubeLinkManaggert(Context context, ArrayList<String> indexList,String url, String user, String name){
+    public HashMap<String, String>  YoutubeLinkManaggert(Context context, ArrayList<String> indexList,String url, String user, String name) throws JSONException {
         HashMap<String, String>  map = new HashMap<>();
         youtubeConverter yc = new youtubeConverter();
         boolean bool = yc.isValidUrl(url);
@@ -26,10 +26,18 @@ public class YoutubeLinkManagger {
                 arr = yc.getId(url);
             } catch (Exception e) {
                 Log.d("lkjhkkj", e.toString());
-            }
+            }//sjj
 
             if (arr[0].equals("v")) {
                 DBmodifier db = new DBmodifier();
+                if(name.equals("") || name == null){
+                    okhttphandler http = new okhttphandler();
+                    String s = http.doInBackground2("https://www.googleapis.com/youtube/v3/videos?part=snippet&id=" + arr[1] + "&key=" + keyApi);
+                    jsonparser parser = new jsonparser();
+                    name = parser.jsonparservideo(s);
+//sssdfdss
+
+                }
                 db.addUrl(name, indexList,user,arr[1]);
 
             } else if (arr[0].equals("list")) {
@@ -38,8 +46,6 @@ public class YoutubeLinkManagger {
                 AsyncTask.execute(new Runnable() {
                     @Override
                     public void run() {
-
-
                     for (Map.Entry<String, String> entry : finalMap.entrySet()) {
                         String key = entry.getKey();
                         String value = entry.getValue();
@@ -63,7 +69,7 @@ public class YoutubeLinkManagger {
         jsonparser parser = new jsonparser();
         String hasnext = "";
         String s = http.doInBackground2("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=114&playlistId=" + url +"&key=" + keyApi);
-
+        Log.d("lkjhkkj", s.toString());
         while (hasnext != null) {
             try {
                 list = parser.JsonParser(s, list);
