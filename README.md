@@ -1,6 +1,8 @@
 # YoutubePlaylistWatcher
 
-A tv app made for the elderly that cannot navigate YouTube and want to watch a collection of the same videos. App allows users to add new folders, videos and playlists which are saved in Firebase Realtime Database and Users log/sign in managed through firebase auth with auto Log in if user already logged. Implemented a YouTube using YouTube player library to play videos with basic tv controller functionality. Also includes resume functionality. Used YouTube Data API to retrieve all necessary data.
+A tv app made for the elderly that cannot navigate YouTube and want to watch a collection of the same videos. App allows users to add new folders, videos and playlists which are saved in Firebase Realtime Database and Users log/sign in managed through firebase auth with auto Log in if user already logged. Implemented a YouTube using YouTube player library to play videos with basic tv controller functionality, videos can be skipped with controller (longer pressed the faster seconds skipped) . Also includes resume functionality. Used YouTube Data API to retrieve all necessary data.
+
+The main goal and purpose of this app was to make navigation and interaction as simple as possible, as this app was desgined for elderly people.
 
 Thanks for reading; // :)
 
@@ -23,4 +25,7 @@ Note: All app navigation and interaction has implemented for the remote control.
 
 ![Project Name (2)](https://user-images.githubusercontent.com/46162359/209498948-11730070-694f-4dbc-8cb8-e631f2102128.gif)
 
+#### Youtube Video Player
+###### Implmented Remote Controller functionalities such as skipping video, video skip quicker the longer pressed. Videos are also resumed.
 
+![ezgif com-gif-maker (7)](https://user-images.githubusercontent.com/46162359/209500090-72b80ce3-d90f-44d5-8a21-d3a5eed04eb3.gif)
