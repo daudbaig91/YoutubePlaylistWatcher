@@ -4,7 +4,7 @@ A tv app made for the elderly that cannot navigate YouTube and want to watch a c
 
 The main goal and purpose of this app was to make navigation and interaction as simple as possible, as this app was desgined for elderly people.
 
-Thanks for reading;  // :)
+Thanks for reading; // :)
 
 
 ## App Functionality and Look:
